@@ -6,6 +6,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.TakesScreenshot;
 
 import java.io.File;
@@ -19,7 +20,10 @@ public class App {
 	public static void main(String[] args) throws InterruptedException, IOException {
 		System.out.println("Hello World!");
 
-		WebDriver driver = new ChromeDriver();
+		
+		ChromeOptions options = new ChromeOptions();
+		options.addArguments("--headless");
+		WebDriver driver = new ChromeDriver(options);
 		// 1. open url
 		driver.get("http://52.15.183.252:8080/addressbook-2.0/");
 		
